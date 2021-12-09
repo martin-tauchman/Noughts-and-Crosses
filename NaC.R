@@ -9,7 +9,7 @@ rules <- function() {
   cat("If you want to end the current game, use the function end.game.\n")
   cat("If you want to quit R, use the function q.\n")
   cat("Enjoy the game.\n")
-  cat("Made by Martin Tauchman, student at Faculty of Science, Charles University, Prague, Czechia")
+  cat("Made by Martin Tauchman, student at the Faculty of Science, Charles University, Prague, Czechia")
 }
 
 end.game <- function() {n.new <<- TRUE}
@@ -147,11 +147,16 @@ NaC <- function(field, new=n.new) {
     }
   }
   ## Dealing with the fact there is no one-step way to win and no one-step way to lose
-  ### Avoiding
+  ### Avoiding forks
   if((desk[2, 1] == "X") & (desk[3, 2] == "X") & is.free(1) & c.unplayed) {
     c.unplayed <- FALSE
     writer(3, 1)
     messenger(3, 1)
+  }
+  if((desk[2, 1] == "X") & (desk[1, 2] == "X") & is.free(7) & c.unplayed) {
+    c.unplayed <- FALSE
+    writer(1, 1)
+    messenger(1, 1)
   }
   ### Placing in the opossite corner
   if((field == 1) & is.free(9) & c.unplayed) {
@@ -159,7 +164,7 @@ NaC <- function(field, new=n.new) {
     writer(1, 3)
     messenger(1, 3)
   }
-  if((field == 3) & is.free(9) & c.unplayed) {
+  if((field == 3) & is.free(7) & c.unplayed) {
     c.unplayed <- FALSE
     writer(1, 1)
     messenger(1, 1)
@@ -178,8 +183,8 @@ NaC <- function(field, new=n.new) {
   for (i in c(5, sample(c(1, 3, 7, 9)), sample(c(2, 4, 6, 8)))) {
    if(is.free(i) & c.unplayed){
      c.unplayed <- FALSE
-     writer(convert(i)[1],convert(i)[2])
-     messenger(convert(i)[1],convert(i)[2])
+     writer(convert(i)[1], convert(i)[2])
+     messenger(convert(i)[1], convert(i)[2])
    }
   }
   if(((3 %in% rows[2, ]) | (3 %in% columns[2, ]) | (3 %in% diagon[2, ])) & !(n.new)) {cat("I have beaten you. You have lost.\n"); end.game()} #Investigates if the computer has won
