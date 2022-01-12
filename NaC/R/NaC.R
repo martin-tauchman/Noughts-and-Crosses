@@ -196,5 +196,9 @@ NaC <- function(field) {
     for(i in 1:9) {
       if(is.free(i)) {cat("The field number", i, "has been selected automatically.\n");NaC(i)}
     }
-  }
+ }
+ # Manipulation in the code finding
+ if(sum(rows) != sum(columns)) {warning("Manipulation in the code. Sums of rows and columns should be equal.")}
+ if(sum(rows[1, ]) != sum(columns[1, ])) {warning("Manipulation in the code, Sums of the first rows in ‘rows’ and ‘columns’ should be equal.")}
+ if(sum(rows[2, ]) != sum(columns[2, ])) {warning("Manipulation in the code, Sums of the second rows in ‘rows’ and ‘columns’ should be equal.")}
 }
