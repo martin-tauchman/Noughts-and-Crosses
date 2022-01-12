@@ -63,13 +63,14 @@ messenger <- function(r, c) {
 #The Main Function
 NaC <- function(field) {
   if(!(exists("n.new"))) {n.new <<- TRUE}
-  # Error messages
+  # Error messages and new desk creation
   if(!(is.numeric(field))) {stop("Argument ‘field’ has to be a number. If you want to know more, type ‘rules()’ and press enter.")}
   if(!(field %in% 1:9)) {stop("Argument ‘field’ has to be a nummer from 1 to 9. If you want to know more, type ‘rules()’ and press enter.")}
   if(n.new) {desk <<- matrix("-", 3, 3); rows <<- matrix(0, 2, 3); columns <<- matrix(0, 2, 3); diagon <<- matrix(0, 2, 2)}
   if(!(is.free(field))) {stop("Selected field is not free. Choose another one.")}
-  n.new <<- FALSE # It avoids generating a new desk and clearing variables
-  c.unplayed <- TRUE #Avoids multiple choises of the computer
+  # Changing indicator variables
+  n.new <<- FALSE # It avoids generating a new desk and clearing variables.
+  c.unplayed <- TRUE # It avoids multiple choices of the computer.
   # Recording user's choice
   desk[convert(field)[1], convert(field)[2]] <<- "X"
   rows[1, convert(field)[1]] <<- rows[1, convert(field)[1]] + 1
@@ -190,8 +191,8 @@ NaC <- function(field) {
   if(((3 %in% rows[2, ]) | (3 %in% columns[2, ]) | (3 %in% diagon[2, ])) & !(n.new)) {cat("I have beaten you. You have lost.\n"); end.game()} #Investigates if the computer has won
   if((sum(rows) == 9) & !(n.new)) {cat("The game has ended in a tie.\n"); end.game()}
   print(desk)
-  #Last automatic choice
-  if(sum(rows) == 8) {
+  # Last automatic choice of the human player
+ if(sum(rows) == 8) {
     for(i in 1:9) {
       if(is.free(i)) {cat("The field number", i, "has been selected automatically.\n");NaC(i)}
     }
