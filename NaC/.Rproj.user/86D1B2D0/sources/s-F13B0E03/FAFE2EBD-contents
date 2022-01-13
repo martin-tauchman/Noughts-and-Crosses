@@ -60,8 +60,6 @@ messenger <- function(r, c) {
   cat(paste("I have chosen the field ", field, ".\n", sep = ""))
 }
 
-
-
 #The Main Function
 NaC <- function(field) {
   if(!(exists("n.new"))) {n.new <<- TRUE}
