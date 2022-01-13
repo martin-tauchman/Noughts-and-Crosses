@@ -1,0 +1,17 @@
+ citHeader("To cite the ‘NaC’ package in publications use:")
+
+ year <- sub("-.*", "", meta$Date)
+ note <- sprintf("R package version %s", meta$Version)
+
+ citEntry(
+    entry = "Manual",
+    title = "NaC: Noughts and Crosses",
+    author = "Martin Tauchman",
+    year = year,
+    note = note,
+    address = "Czechia",
+    url = "https://github.com/martin-tauchman/Noughts-and-Crosses",
+    textVersion = paste0("Tauchman M. (", year, "). NaC: Noughts and Crosses. ", note, ". Czechia, URL https://github.com/martin-tauchman/Noughts-and-Crosses")
+  )
+
+
