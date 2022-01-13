@@ -1,7 +1,7 @@
 Package: NaC
 Type: Package
 Title: Naughts and Crosses
-Version: 0.1.0
+Version: 0.1.1
 Author: Martin Tauchman
 Maintainer: Martin Tauchman <tauchman00@seznam.cz>
 Description: Let's play a classical game Naughts and Crosses using R. Learn more information using rules()

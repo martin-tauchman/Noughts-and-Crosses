@@ -2,9 +2,9 @@
 # Help with rules
 rules <- function() {
   cat("Welcome to the game Noughts and Crosses\nYour task is to have three crosses in a row, a column or a diagonal.\n")
-  cat("You can add a cross using a function NaC. In the argument use the number of the selected field (see bellow).\n")
+  cat("You can add a cross using the function NaC. In the argument use the number of the selected field (see below).\n")
   print(matrix(c(7:9,4:6,1:3),3,3,b=T))
-  cat("Computer will automatically show its choice and decide if there is a winner.\n")
+  cat("The computer will automatically show its choice and decide if there is a winner.\n")
   cat("If there is no winner, use the function NaC again.\n")
   cat("If you want to end the current game, use the function end.game.\n")
   cat("If you want to quit R, use the function q.\n")
@@ -192,7 +192,7 @@ NaC <- function(field) {
   if((sum(rows) == 9) & !(n.new)) {cat("The game has ended in a tie.\n"); end.game()}
   print(desk)
   # Last automatic choice of the human player
- if(sum(rows) == 8) {
+ if((sum(rows) == 8) & !(n.new)) {
     for(i in 1:9) {
       if(is.free(i)) {cat("The field number", i, "has been selected automatically.\n");NaC(i)}
     }

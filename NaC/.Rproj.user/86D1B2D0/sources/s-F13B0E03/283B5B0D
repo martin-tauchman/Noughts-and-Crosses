@@ -3,7 +3,7 @@
     "path": "~/GitHub/Noughts-and-Crosses/NaC/R/NaC.R",
     "project_path": "R/NaC.R",
     "type": "r_source",
-    "hash": "869244667",
+    "hash": "3567391387",
     "contents": "",
     "dirty": false,
     "created": 1642077878376.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "200,65",
-        "scrollLine": "184"
+        "cursorPosition": "11,21",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1642086175,
+    "lastKnownWriteTime": 1642099710,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1642086175031,
+    "last_content_update": 1642099710834,
     "read_only": false,
     "read_only_alternatives": []
 }
