@@ -39,10 +39,10 @@ function (field)
         n.new <<- TRUE
     }
     if (!(is.numeric(field))) {
-        stop("Argument ‘field’ has to be a number. If you want to know more, type ‘rules()’ and press enter.")
+        stop("Argument ?field? has to be a number. If you want to know more, type ?rules()? and press enter.")
     }
     if (!(field \%in\% 1:9)) {
-        stop("Argument ‘field’ has to be a number from 1 to 9. If you want to know more, type ‘rules()’ and press enter.")
+        stop("Argument ?field? has to be a nummer from 1 to 9. If you want to know more, type ?rules()? and press enter.")
     }
     if (n.new) {
         desk <<- matrix("-", 3, 3)
@@ -222,7 +222,7 @@ function (field)
         warning("Manipulation in the code! Sums of the first rows in 'rows' and 'columns' should be equal.")
     }
     if (sum(rows[2, ]) != sum(columns[2, ])) {
-        warning("Manipulation in the code! Sums of the second rows in 'rows' and 'columns' should be equal.")
+        warning("Manipulation in thNe code! Sums of the second rows in 'rows' and 'columns' should be equal.")
     }
   }
 }

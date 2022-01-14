@@ -65,7 +65,7 @@ NaC <- function(field) {
   if(!(exists("n.new"))) {n.new <<- TRUE}
   # Error messages and new desk creation
   if(!(is.numeric(field))) {stop("Argument ‘field’ has to be a number. If you want to know more, type ‘rules()’ and press enter.")}
-  if(!(field %in% 1:9)) {stop("Argument ‘field’ has to be a nummer from 1 to 9. If you want to know more, type ‘rules()’ and press enter.")}
+  if(!(field %in% 1:9)) {stop("Argument ‘field’ has to be a number from 1 to 9. If you want to know more, type ‘rules()’ and press enter.")}
   if(n.new) {desk <<- matrix("-", 3, 3); rows <<- matrix(0, 2, 3); columns <<- matrix(0, 2, 3); diagon <<- matrix(0, 2, 2)}
   if(!(is.free(field))) {stop("Selected field is not free. Choose another one.")}
   # Changing indicator variables
