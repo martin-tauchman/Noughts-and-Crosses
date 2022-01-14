@@ -180,12 +180,12 @@ function (field)
         writer(1, 1)
         messenger(1, 1)
     }
-    if ((field == 7) & is.free(9) & c.unplayed) {
+    if ((field == 7) & is.free(3) & c.unplayed) {
         c.unplayed <- FALSE
         writer(3, 3)
         messenger(3, 3)
     }
-    if ((field == 9) & is.free(9) & c.unplayed) {
+    if ((field == 9) & is.free(1) & c.unplayed) {
         c.unplayed <- FALSE
         writer(3, 1)
         messenger(3, 1)
